@@ -49,6 +49,7 @@ From left to right:
   <br>
   <img src="results/sample3.png" width="90%">
 </p>
+
 ---
 
 ## 🚀 How to Run
