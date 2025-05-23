@@ -8,24 +8,31 @@ This repository implements a lightweight **image super-resolution model** based 
 
 | File | Description |
 |------|-------------|
-| `main.py` | Main execution script for training, testing, and visualizing results. |
-| `arguments.py` | Argument parser containing configurable options (batch size, patch size, paths, etc). |
-| `preprocessing.py` | Image splitting, patch extraction, and train/val/test set creation. |
-| `dataloader.py` | Loads preprocessed patches into PyTorch Datasets and DataLoaders. |
-| `model.py` | Defines the SRCNN model architecture. |
-| `train.py` | Handles training loop and validation evaluation. |
-| `test.py` | Evaluates model on test data and displays visual results. |
-| `utils.py` | Utility functions: PSNR calculation, dynamic importing, directory creation. |
+| `main.py` | main |
+| `arguments.py` | Argument parser  |
+| `preprocessing.py` | Image splitting, patch extraction, and train/val/test set creation |
+| `dataloader.py` | Loads preprocessed patches into PyTorch Datasets and DataLoaders |
+| `model.py` | SRCNN model architecture |
+| `train.py` | Train & valid model |
+| `test.py` | Test model & displays visual results |
+| `utils.py` | Utility functions: PSNR calculation, dynamic importing, directory creation |
 
 ---
+> 📚 **Dataset Source**  
+> The Urban100 dataset used in this project was obtained from Kaggle:  
+>  
+> [Urban100 Dataset on Kaggle](https://www.kaggle.com/datasets/harshraone/urban100)  
+>  
+> Credit: Dataset uploaded by [Harsh Raone](https://www.kaggle.com/harshraone)
+
 
 ## 📊 Dataset Structure
-
-All data is stored in the `./data/Urban100` directory. The structure follows this hierarchy:
-
-- `image_SRF_2/` 폴더는 raw image 쌍을 포함합니다.  
-- `x/`는 Low-Resolution 이미지, `y/`는 High-Resolution 이미지입니다.
-- 이미지들은 `64x64` 패치로 나누어 학습합니다.
+> The Urban100 dataset used in this project was obtained from Kaggle:    
+> [Urban100 Dataset on Kaggle](https://www.kaggle.com/datasets/harshraone/urban100)  
+>
+> The structure follows this hierarchy:  
+- xL Low-Resolution image, y: High-Resolution image
+- patch size: 64x64
 
 ---
 
@@ -42,24 +49,10 @@ From left to right:
   <br>
   <img src="results/sample3.png" width="90%">
 </p>
-
-> 📁 Make sure to place 3 sample output images (e.g. `sample1.png`, `sample2.png`, `sample3.png`) in the `results/` directory.
-
 ---
 
 ## 🚀 How to Run
 
 ```bash
-# (1) Install dependencies
-pip install -r requirements.txt
-
-# (2) Run training and evaluation
+# Run training and evaluation
 python main.py
-
----
-
-## 🔧 다음 작업 추천
-
-- `results/` 폴더 만들고 `sample1.png`, `sample2.png`, `sample3.png` 넣기
-- `README.md` 루트 디렉토리에 저장
-- 필요 시 `requirements.txt`도 생성 (`torch`, `tqdm`, `numpy`, `matplotlib`, `scikit-learn`, `Pillow`)
