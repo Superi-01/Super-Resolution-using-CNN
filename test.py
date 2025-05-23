@@ -45,13 +45,13 @@ def visualize_test_result(model, test_dl, opt):
             # 시각화
             plt.figure(figsize=(12, 4))
             plt.subplot(1, 3, 1)
-            plt.title("Input (LR)")
+            plt.title(f"Input (LR)\nPSNR: {calc_psnr(input_img, target_img):.2f} dB")
             plt.imshow(input_img.numpy(), cmap='gray')
             plt.axis('off')
 
             plt.subplot(1, 3, 2)
             plt.title("Output (SR)")
-            plt.imshow(output_img.numpy(), cmap='gray')
+            plt.title(f"Output (SR)\nPSNR: {calc_psnr(output_img, target_img):.2f} dB")
             plt.axis('off')
 
             plt.subplot(1, 3, 3)
