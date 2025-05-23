@@ -31,7 +31,7 @@ This repository implements a lightweight **image super-resolution model** based 
 > [Urban100 Dataset on Kaggle](https://www.kaggle.com/datasets/harshraone/urban100)  
 >
 > The structure follows this hierarchy:  
-- xL Low-Resolution image, y: High-Resolution image
+- x: Low-Resolution image, y: High-Resolution image
 - patch size: 64x64
 
 ---
