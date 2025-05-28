@@ -50,8 +50,8 @@ def visualize_test_result(model, test_dl, opt):
             plt.axis('off')
 
             plt.subplot(1, 3, 2)
-            plt.title("Output (SR)")
             plt.title(f"Output (SR)\nPSNR: {calc_psnr(output_img, target_img):.2f} dB")
+            plt.imshow(output_img.numpy(), cmap='gray')
             plt.axis('off')
 
             plt.subplot(1, 3, 3)
